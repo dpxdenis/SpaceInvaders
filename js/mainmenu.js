@@ -1,13 +1,19 @@
+var playButton;
+
 class MainMenu{
     constructor() {
-
-    }
-
+        playButton = createButton("►");
+        playButton.elt.setAttribute('id', 'playButton')
+        playButton.mousePressed(startGame)
+    } 
+    
     draw(){
         image(bgMainMenu,0,0)
         drawTitle()
         drawFooter();
+        drawMeme();
         drawVersion();
+        drawAuthor();
         drawPlayButton();
         console.log('Notice me senpai.')
     }
@@ -30,7 +36,7 @@ function drawFooter(){
     fill(150)
     textFont(spaceFont)
     textAlign(CENTER, CENTER)
-    text('cats vs. cucumbers', width / 2, (height / 2) - 60)
+    text('cats vs. cucumbers', width / 2, (height / 2) - 50)
     pop();
     console.log('Funny awesome ultimate fun footer was loaded!')
 }
@@ -46,15 +52,35 @@ function drawVersion() {
 
 function drawPlayButton(){
     push();
-    playButton = createButton('Play!');
-    playButton.position(width / 2, (height / 2) - 40)
-    playButton.style('background-color', color(32,32,32,100))
-    playButton.style('color', color(255,255,255,100))
-    playButton.style('border', 'none')
-    playButton.style('font-size', 24)
- //   playButton.style('display', 'block')
-  //  playButton.style('height', 64)
-   // playButton.style('width', 100)
-    playButton.mousePressed(console.log('luuuuuuuuuuuuuuul'))
+    playButton.position(width / 2 - playButton.width / 2, (height / 2))
     pop();
+}
+
+function drawMeme(){
+    push();
+    textSize(32)
+    fill(200)
+    textAlign(CENTER, CENTER)
+    text('CLICK TO DESTAROI THA CUCUM!!!', width / 2, height - 25)
+    pop();
+    console.log('Funny awesome ultimate fun footer was loaded!')
+}
+
+function drawAuthor(){
+    push();
+    textSize(16)
+    fill(255)
+    text('Authors: \n CyberHawk aka. Patrick \n DevDenis aka. Denis', 0, 15)
+    pop();
+
+}
+
+function startGame(){
+    clear();
+    playButton.elt.removeAttribute('style', 'position: absolute;')
+    playButton.elt.removeAttribute('id', 'playButton')
+    playButton.elt.setAttribute('id', 'playButtonStop')
+    let sheet = document.getElementById('style');
+    sheet.setAttribute("href", "./css/ingame.css");
+    gameState = 1;
 }
