@@ -1,34 +1,31 @@
 class Player {
     constructor(x, y, w, h, image, canvas) {
-        this.position = createVector(x, y);
         this.size = createVector(w, h);
+        this.position = createVector(x, y);
         this.image = image;
-        this.speed = 5;
+        this.moveSpeed = 5;
         this.shoots = [];
         this.shootCooldown = 0;
         this.timer;
         this.canvas = canvas;
+        this.margin = 5;
     }
 
     update() {
         if (keyIsDown(LEFT_ARROW)) {
-            let x = clamp(
-                this.position.x - speed,
-                0 - this.size.x / 2,
-                canvas.x - this.size.x / 2
-            );
+            let cur = this.position.x - this.moveSpeed;
+            let min = this.margin;
+            let max = this.canvas.x - this.size.x / 2 - this.margin;
 
-            this.position.set(x, canvas.y - this.size.y / 2);
+            this.position.x = clamp(cur, min, max);
         }
 
         if(keyIsDown(RIGHT_ARROW)) {
-            let x = clamp(
-                this.position.x + speed,
-                0 - this.size.x / 2,
-                canvas.x - this.size.x / 2
-            );
+            let cur = this.position.x + this.moveSpeed;
+            let min = this.size.x / 2 + this.margin;
+            let max = this.canvas.x - this.size.x - this.margin;
 
-            this.position.set(x, canvas.y - this.size.y / 2);
+            this.position.x = clamp(cur, min, max);
         }
 
         if (this.shoots.length > 0) {
@@ -47,7 +44,7 @@ class Player {
 
     display() {
         push();
-        rectMode(CENTER);
+        //rectMode(CENTER);
         image(this.image, this.position.x, this.position.y, this.size.x, this.size.y);
         pop();
     }

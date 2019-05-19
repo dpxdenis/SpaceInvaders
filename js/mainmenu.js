@@ -15,7 +15,7 @@ class MainMenu{
         drawVersion();
         drawAuthor();
         drawPlayButton();
-        console.log('Notice me senpai.')
+        //console.log('Notice me senpai.')
     }
 }
 
@@ -27,7 +27,7 @@ function drawTitle(){
     textAlign(CENTER, CENTER)
     text('spacefxckers', width / 2, (height / 2) - 100)
     pop();
-    console.log('CYKA TITLE LOAD')
+    //console.log('CYKA TITLE LOAD')
 }
 
 function drawFooter(){
@@ -38,7 +38,7 @@ function drawFooter(){
     textAlign(CENTER, CENTER)
     text('cats vs. cucumbers', width / 2, (height / 2) - 50)
     pop();
-    console.log('Funny awesome ultimate fun footer was loaded!')
+    //console.log('Funny awesome ultimate fun footer was loaded!')
 }
 
 function drawVersion() {
@@ -47,7 +47,7 @@ function drawVersion() {
     fill(255)
     text(version, 0, height - 10)
     pop();
-    console.log('Nerd Coding Hero Info loaded :^)')
+    //console.log('Nerd Coding Hero Info loaded :^)')
 }
 
 function drawPlayButton(){
@@ -63,7 +63,7 @@ function drawMeme(){
     textAlign(CENTER, CENTER)
     text('CLICK TO DESTAROI THA CUCUM!!!', width / 2, height - 25)
     pop();
-    console.log('Funny awesome ultimate fun footer was loaded!')
+    //console.log('Funny awesome ultimate fun footer was loaded!')
 }
 
 function drawAuthor(){
@@ -77,10 +77,15 @@ function drawAuthor(){
 
 function startGame(){
     clear();
-    playButton.elt.removeAttribute('style', 'position: absolute;')
+    
+    resizeCanvas(windowWidth * 0.76, windowHeight * 0.76);
+    
     playButton.elt.removeAttribute('id', 'playButton')
-    playButton.elt.setAttribute('id', 'playButtonStop')
+    playButton.elt.removeAttribute('style', 'position: absolute;')
+    playButton.elt.setAttribute('style', '    position: relative; display: none;')
+    
     let sheet = document.getElementById('style');
     sheet.setAttribute("href", "./css/ingame.css");
+    
     gameState = 1;
 }
