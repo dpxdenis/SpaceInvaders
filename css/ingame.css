@@ -2,11 +2,16 @@ html, body {
     height: 100%;
 }
 
-body{
-    padding: 0;
-    margin: 0;
-
+body {
+    margin: 0px;
     display: flex;
     justify-content: center;
-    align-content: center;
+    align-items: center;
+}
+
+#bg{
+    position: absolute;
+    z-index: -100;
+    width: 100%;
+    height: 100%;
 }

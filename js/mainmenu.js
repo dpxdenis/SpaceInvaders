@@ -78,12 +78,14 @@ function drawAuthor(){
 function startGame(){
     clear();
     
-    resizeCanvas(windowWidth * 0.76, windowHeight * 0.76);
+    resizeCanvas(ingameCanvas.x, ingameCanvas.y);
     
     playButton.elt.removeAttribute('id', 'playButton')
-    playButton.elt.removeAttribute('style', 'position: absolute;')
     playButton.elt.setAttribute('style', '    position: relative; display: none;')
-    
+
+    let bg = document.getElementById('bg');
+    bg.setAttribute('style', 'visibility: visible')
+
     let sheet = document.getElementById('style');
     sheet.setAttribute("href", "./css/ingame.css");
     
