@@ -7,7 +7,7 @@ var bgMainMenu;
 var spaceFont;
 var ship;
 var enemy;
-var version = 'V0.4 - Build: 200519-alpha';
+var version = 'V0.5 - Build: 210519-alpha';
 
 function preload(){
     bgMainMenu = loadImage('./img/bg-mainmenu.jpg');
