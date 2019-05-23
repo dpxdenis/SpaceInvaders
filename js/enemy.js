@@ -17,7 +17,9 @@ class Enemy{
     }
 
     update(){
+      this.x = this.x;
       this.y = this.y + 10;
+      this.position.set(this.x, this.y);
     }
 }
 

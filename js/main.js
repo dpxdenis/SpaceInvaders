@@ -9,13 +9,14 @@ var bgMainMenu;
 var spaceFont;
 var ship;
 var enemy;
+
 let soundMainMenu;
 let soundIngame;
 let soundShoot;
 let soundCat;
 let soundPop;
 
-var version = 'V0.9 - Build: 230519-prerelease';
+var version = 'V1.0 - Build: 230519-release';
 
 function preload(){
     bgMainMenu = loadImage('./img/bg-mainmenu.jpg');
