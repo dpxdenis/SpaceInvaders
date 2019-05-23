@@ -69,7 +69,7 @@ class Player {
 
             this.shoots.push(new shootOne(posCopy));
             shootCooldown = 1;
-            
+
             let timer = setTimeout(function() {
                 shootCooldown = 0;
             }, 1000 / 3);

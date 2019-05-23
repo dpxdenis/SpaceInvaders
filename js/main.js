@@ -1,5 +1,5 @@
 var gameState = 0; //0 = MainMenu # 1 = Ingame
-var devmode = true; //<---- SET THIS TO TRUE TO INIT AUTOMATICLY INGAME! DONT CHANGE ANYTHING OTHER SHIT!
+var devmode = false;//<---- SET THIS TO TRUE TO INIT AUTOMATICLY INGAME! DONT CHANGE ANYTHING OTHER SHIT!
 var devvar = 0;
 var mainMenu;
 var game;
@@ -7,7 +7,7 @@ var bgMainMenu;
 var spaceFont;
 var ship;
 var enemy;
-var version = 'V0.5 - Build: 210519-alpha';
+var version = 'V0.6 - Build: 230519-beta';
 
 function preload(){
     bgMainMenu = loadImage('./img/bg-mainmenu.jpg');
