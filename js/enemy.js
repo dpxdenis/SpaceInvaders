@@ -64,6 +64,8 @@ function updateEnemys() {
   }
 }
 
+let sounded = false;
+
 function enemyIsOnGround(){
   for (var i = 0; i < enemys.length; i++) {
     for (var j = 0; j < enemys[i].length; j++) {
@@ -74,8 +76,13 @@ function enemyIsOnGround(){
       let plyPos = player.position;
 
       if(en.alive == true && enPos >= ingameCanvas.y - en.size.y) {
-        alert('GAME OVER! >:C U DESTROIDA THA UNIVERSE! THE CUCUMBAS ARE OVERTAKING!!! >:CCCC');
-        location.reload();
+          if(!soundCat.isPlaying() && !sounded) {
+              soundCat.setVolume(0.5);
+              soundCat.play();
+              sounded = true;
+              alert('GAME OVER! >:C U DESTROIDA THA UNIVERSE! THE CUCUMBAS ARE OVERTAKING!!! >:CCCC');
+              location.reload();
+          }
       }
     }
   }

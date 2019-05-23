@@ -15,7 +15,15 @@ class MainMenu{
         drawVersion();
         drawAuthor();
         drawPlayButton();
+        startMusic();
         //console.log('Notice me senpai.')
+    }
+}
+
+function startMusic(){
+    if(!soundMainMenu.isPlaying() && gameState == 0) {
+        soundMainMenu.setVolume(0.5);
+        soundMainMenu.play();
     }
 }
 
@@ -90,4 +98,5 @@ function startGame(){
     sheet.setAttribute("href", "./css/ingame.css");
     
     gameState = 1;
+    soundMainMenu.stop();
 }

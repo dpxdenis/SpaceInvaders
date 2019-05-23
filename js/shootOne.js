@@ -34,6 +34,8 @@ class shootOne {
                 if (en.alive == true) {
                   en.alive = false;
                   this.dead = true;
+                  soundPop.setVolume(0.8);
+                  soundPop.play();
                   score++;
 
                   let tempScore = (score % 36);

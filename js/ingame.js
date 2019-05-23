@@ -22,12 +22,21 @@ class Game {
         displayEnemys();
         enemyIsOnGround();
         drawScore();
+        startTheme();
     }
 }
 
 function keyPressed() {
     if (keyCode == 32) {
        player.shoot();
+    }
+}
+
+function startTheme(){
+    if(!soundIngame.isPlaying() && gameState == 1) {
+        soundIngame.setVolume(0.3);
+        soundIngame.loop();
+        soundIngame.play();
     }
 }
 

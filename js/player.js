@@ -74,6 +74,9 @@ class Player {
                 shootCooldown = 0;
             }, 1000 / 3);
 
+            soundShoot.setVolume(0.8);
+            soundShoot.play();
+            
             console.log("I have shoot this bitch cykaaaaaa");
         }
         else {
